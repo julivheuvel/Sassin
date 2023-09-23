@@ -1,7 +1,7 @@
 ### Documentation
 https://sass-lang.com/
 
-### Extentions
+### Extension
 Extension: Sass => Syler
 
 ### Sass Example
