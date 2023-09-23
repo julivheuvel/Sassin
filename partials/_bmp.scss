@@ -1,0 +1,89 @@
+@each $key, $val in $colorMap {
+
+    // ==========
+    //  Borders
+    // ==========
+    .b-#{$key} {
+        border: 1px $val solid;
+    }
+    .br-#{$key} {
+        border-right: 1px $val solid;
+    }
+    .bl-#{$key} {
+        border-left: 1px $val solid;
+    }
+    .bt-#{$key} {
+        border-top: 1px $val solid;
+    }
+    .bb-#{$key} {
+        border-bottom: 1px $val solid;
+    }
+    
+    @for $i from 1 through 25 {
+        .b-#{$key}-#{$i} {
+            border: #{$i}#{"px"} $val solid;
+        }
+    }
+
+
+
+}
+
+// ==========
+//  Margins
+// ==========
+@for $i from 1 through 100 {
+    .m-#{$i} {
+        margin: #{$i}#{"em"};
+    }
+    .mr-#{$i} {
+        margin-right: #{$i}#{"em"};
+    }
+    .ml-#{$i} {
+        margin-left: #{$i}#{"em"};
+    }
+    .mt-#{$i} {
+        margin-top: #{$i}#{"em"};
+    }
+    .mb-#{$i} {
+        margin-bottom: #{$i}#{"em"};
+    }
+    // =======
+    // negatives
+    // =======
+    .nm-#{$i} {
+        margin: #{"-"}#{$i}#{"em"};
+    }
+    .nmr-#{$i} {
+        margin-right: #{"-"}#{$i}#{"em"};
+    }
+    .nml-#{$i} {
+        margin-left: #{"-"}#{$i}#{"em"};
+    }
+    .nmt-#{$i} {
+        margin-top: #{"-"}#{$i}#{"em"};
+    }
+    .nmb-#{$i} {
+        margin-bottom:  #{"-"}#{$i}#{"em"};
+    }
+
+
+    // ==========
+    // Padding
+    // ==========
+    .p-#{$i} {
+        padding: #{$i}#{"em"};
+    }
+    .pr-#{$i} {
+        padding-right: #{$i}#{"em"};
+    }
+    .pl-#{$i} {
+        padding-left: #{$i}#{"em"};
+    }
+    .pt-#{$i} {
+        padding-top: #{$i}#{"em"};
+    }
+    .pb-#{$i} {
+        padding-bottom: #{$i}#{"em"};
+    }
+}

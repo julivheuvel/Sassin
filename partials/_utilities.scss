@@ -1,0 +1,125 @@
+@use 'sass:math';
+
+$util : (
+
+    // ===========
+    // Display
+    // ===========
+    "display" : (
+        "prefix" : "d",
+        "values" : (
+            "none" : none,
+            "block" : block,
+            "flex" : flex,
+            "inline" : inline,
+            "ib" : inline-block,
+        )
+    ),
+
+    // ===========
+    // Justify Content
+    // ===========
+    "justify-content" : (
+        "prefix" : "jc",
+        "values" : (
+            "start" : start,
+            "center" : center,
+            "end" : end,
+            "left" : left,
+            "right" : right,
+            "stretch" : stretch,
+            "flex-start" : flex-start,
+            "flex-end" : flex-end,
+            "between" : space-between,
+            "around" : space-around,
+            "evenly" : space-evenly,
+        ),
+    ),
+
+
+    // ===========
+    // Align Items
+    // ===========
+    "align-items" : (
+        "prefix" : "ai",
+        "values" : (
+            "stretch" : stretch,
+            "center" : center,
+            "start" : start,
+            "end" : end,
+            "flex-end" : flex-end,
+            "flex-start" : flex-start,
+        ),
+    ),
+
+
+    // ===========
+    // Opacity
+    // ===========
+    "opacity" : (
+        "prefix" : "o",
+        "values" : (
+            "10" : 0.1,
+            "15" : 0.15,
+            "20" : 0.2,
+            "25" : 0.25,
+            "30" : 0.3,
+            "35" : 0.35,
+            "40" : 0.4,
+            "45" : 0.45,
+            "50" : 0.5,
+            "55" : 0.55,
+            "60" : 0.6,
+            "65" : 0.65,
+            "70" : 0.7,
+            "75" : 0.75,
+            "80" : 0.8,
+            "85" : 0.85,
+            "90" : 0.9,
+            "95" : 0.95,
+            "100" : 1,
+        ),
+    ),
+
+    // ===========
+    // Border Radius
+    // ===========
+    "border-radius": (
+        "prefix" : "br",
+        "values" : (
+            // default handles "br" class without additional info
+            "default" : $base-border-radius,
+            "none" : 0,
+            "xs" : math.div($base-border-radius, 4),
+            "sm" : math.div($base-border-radius, 2),
+            "lg" : $base-border-radius * 2,
+            "full" : 50%,
+        ),
+    ),
+
+    // ===========
+    // Font Size
+    // ===========
+    "font-size" : (
+        "prefix" : "fs", 
+        "values" : (
+            "sm" : $font-size-sm,
+            "md" : $base-font-size
+        )
+    )
+
+);
+
+
+@each $property, $map in $util {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $key, $val in $values {
+        .#{$prefix}-#{$key} {
+            #{$property}: $val;
+        }
+    }
+
+
+}

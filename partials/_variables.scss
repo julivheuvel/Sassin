@@ -1,0 +1,56 @@
+// ===========
+// border-radius
+// ===========
+$base-border-radius: 20px;
+
+
+// ===========
+// font-size
+// ===========
+$base-font-size: 1rem;
+// ==========
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+
+
+
+
+
+
+@each $key, $val in $colorMap {
+    .text-#{$key} {
+        color: $val;
+    }
+    .text-#{$key}-lightcomp {
+        color: light-comp($val);
+    }
+    .text-#{$key}-darkcomp {
+        color: dark-comp($val);
+    }
+    .bg-#{$key} {
+        background-color: $val;
+    }
+    .bg-#{$key}-lightcomp {
+        background-color: light-comp($val);
+    }
+    .bg-#{$key}-darkcomp {
+        background-color: dark-comp($val);
+    }
+
+    @for $i from 1 through 9 {
+        .text-#{$key}-light-#{$i} {
+            color: mix(white, $val, $i*10%);
+        }
+        .text-#{$key}-dark-#{$i} {
+            color: mix(black, $val, $i*10%);
+        }
+        .bg-#{$key}-light-#{$i} {
+            background-color: mix(white, $val, $i*10%);
+        }
+        .bg-#{$key}-dark-#{$i} {
+            background-color: mix(black, $val, $i*10%);
+        }
+    }
+}
